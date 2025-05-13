@@ -9,15 +9,9 @@ const projectSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    tags: [{
-        name: {
-            type: String,
-            required: true,
-        },
-        color: {
-            type: String,
-            default: 'violet',
-        }
+    technologies: [{
+        type: String,
+        required: true,
     }],
     image: {
         type: String,

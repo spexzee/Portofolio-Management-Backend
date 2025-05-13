@@ -6,6 +6,7 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 const projectRoutes = require('./routes/project.routes');
 const technologyRoutes = require('./routes/technology.routes');
+const commonRoutes = require('./routes/common.routes');
 
 // Middleware
 app.use(cors());
@@ -15,6 +16,7 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use('/api/project', projectRoutes);
 app.use('/api/tech', technologyRoutes);
+app.use('/api/common',commonRoutes)
 // Basic route
 app.get('/', (req, res) => {
     res.send('Welcome to the Express Boilerplate!');
