@@ -19,7 +19,7 @@ app.use('/api/tech', technologyRoutes);
 app.use('/api/common',commonRoutes)
 // Basic route
 app.get('/', (req, res) => {
-    res.send('Welcome to the Express Boilerplate!');
+    res.send('Welcome to Portfolio Backend');
 });
 
 connectDB();
