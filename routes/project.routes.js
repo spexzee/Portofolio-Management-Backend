@@ -5,12 +5,21 @@ const router = express.Router();
 // Get all projects
 router.get('/projects', async (req, res) => {
     try {
-        const projects = await Project.find();
-        res.json({ message: 'Projects retrieved successfully', projects });
+        const projects = await Project.find().lean();
+        res.status(200).json({ 
+            success: true,
+            message: 'Projects retrieved successfully',
+            projects 
+        });
     } catch (error) {
-        res.status(500).json({ message: 'Error retrieving projects', error });
+        res.status(500).json({ 
+            success: false,
+            message: 'Error retrieving projects', 
+            error: error.message 
+        });
     }
 });
+
 
 // Create a new project
 router.post('/create-project', async (req, res) => {
